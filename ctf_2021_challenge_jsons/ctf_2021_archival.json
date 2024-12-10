@@ -1,0 +1,6 @@
+{
+    "challenge.py": "from hacksport.operations import execute\nfrom hacksport.problem import Challenge, File\n\n\nclass Problem(Challenge):\n    def setup(self):\n        self.files = []\n\n    def generate_flag(self, random):\n        return r\"gigem{s1t3_und3r_c0n57ruc710n}\"",
+    "problem.json": "{\n  \"name\": \"Archival\",\n  \"category\": \"OSINT\",\n  \"description\": \"I can't remember the flag... it used to be on our website but when we updated it the flag got lost in the process. Since nothing ever gets deleted on the internet it should be safe, but how? \",\n  \"score\" : 50,\n  \"hints\": [\"\"],\n  \"walkthrough\": \"check our github or something\",\n  \"author\": \"Teddy Heinen\",\n  \"organization\": \"TAMUctf\",\n  \"event\": \"TAMUctf 2021\"\n}\n",
+    "README.md": "# archival\n\n## description\n\nI can't remember the flag... it used to be on our website but when we updated it the flag got lost in the process. Since nothing ever gets deleted on the internet it should be safe, but how?  \n\n## solution\n\ngg internet archive\n\n[](https://web.archive.org/web/20201028142907/https://tamuctf.com/)",
+    "category": "osint"
+}

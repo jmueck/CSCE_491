@@ -1,0 +1,4 @@
+{
+    "README.md": "# Vanity\n\n## Description\n[Read, weep, seethe, and cope.](https://github.com/tamuctf/vanity)\n\n![](https://c.tenor.com/3BMRCVepIa8AAAAC/vanity-smurf-youre-so-vain.gif)\n\n## Solution\nThe hint is in the name and the GIF; \"vanity\" == \"mirror\". \n```sh\ngit clone --mirror https://github.com/tamuctf/vanity.git\n```\nInspecting the contents of `packed-refs`, we have:\n```\n# pack-refs with: peeled fully-peeled sorted \nddf0fc5d6df4c8121a77797ef51f82890a5a461f refs/heads/main\nddf0fc5d6df4c8121a77797ef51f82890a5a461f refs/remotes/origin/main\na26b919a122134988f6df04854363bd43d27673e refs/remotes/origin/sussy\n```\nThe last commit is very sus, so we'll clone the repo for realsies to check out the commit hash:\n```sh\ngit clone ./vanity.git\ncd vanity\ngit checkout a26b919a122134988f6df04854363bd43d27673e\ncat sneaky.txt\n```\n\nFlag: `gigem{watch_the_night_and_bleed_for_me}`\n",
+    "category": "forensics"
+}

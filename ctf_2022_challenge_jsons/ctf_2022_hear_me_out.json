@@ -1,0 +1,5 @@
+{
+    "hear-me-out.mp3": "[Binary file or unsupported type: mp3]",
+    "README.md": "# Hear Me Out\n\n## Description\nYou overheard some suspicious people typing on their phones, what are they saying? \n\nThe flag format is gigem{messagewithoutspace}\n\n## Solution\n\nDownload the .mp3 and upload it to https://unframework.github.io/dtmf-detect/\n\nThe DTMF tones translate to `44422226684433277788`.\n\nI then used https://www.dcode.fr/multitap-abc-cipher to get the flag.  \n\n`Flag: gigem{ICANTHEARU}`\n",
+    "category": "misc"
+}

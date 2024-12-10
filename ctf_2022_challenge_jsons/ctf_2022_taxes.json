@@ -1,0 +1,5 @@
+{
+    "2021-return-enc.pdf": "[Error reading file: File has not been decrypted]",
+    "README.md": "# Taxes\n\n## Description\n\nThank you for completing your 2021 taxes with Another Data Harvester!\n\nWe've sent you your 2021 tax return. For your safety and privacy, we've delivered the document as encrypted with your Social Security Number, with no dashes.\n\nWe hope you have a pleasant 2022. Make sure to file with us next year so we can ~~harvest your data further~~ help you with your taxes again!\n\n## Solution\n\n1. pdf2john and adjust for hashcat (remove filename from file)\n2. `hashcat -m 10500 ./pdf.hash -a3 \"?d?d?d?d?d?d?d?d?d\"`\n3. wait\n4. `694705124` & `gigem{hope_you_did_your_taxes_already}`\n",
+    "category": "forensics"
+}

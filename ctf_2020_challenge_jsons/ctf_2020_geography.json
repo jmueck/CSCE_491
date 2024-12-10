@@ -1,0 +1,4 @@
+{
+    "README.md": "# Geography\n\nMy friend told me that she found something cool on the Internet, but all she sent me was 11000010100011000111111111101110 and 11000001100101000011101111011111.\n\nShe's always been a bit cryptic. She told me to \"surround with gigem{} that which can be seen from a bird's eye view\"... what?\n\n## Setup\n\nJust needs the description!\n\n## Brief Dev Description\n\nIntroduces users to floating point representation, and forces them to think outside the box.\n\n## Solution\n\n1. Convert binary to IEEE 754 floating point numbers.\n2. Swap the order.\n3. Find a coca-colo logo at these coordinates in Chile on Google Maps. Flag is gigem{coca-cola}.\n",
+    "category": "Misc"
+}

@@ -1,0 +1,6 @@
+{
+    "photo.png": "[Binary file or unsupported type: png]",
+    "README.md": "# Instagram\n\nI need a hacker please!!! My photo was going to get thousands of likes, but it was corrupted \ud83d\ude29. <photo.png>\n\n## Setup\n\nJust need to replace the link in the description to an actualy download link of `photo.png`. NOTE: make sure\nwe upload `photo.png`, and NOT `photo.jpg`.\n\n## Brief Dev Description\n\nA handwritten flag that needs to be opened as a jpg instead of png.\n\n## Solution\n\nAll one needs to do is change the extension to .jpg and add back the \"JFIF\" header.\nDiff `photo.jpg` and `photo.png` to see the solution.\n",
+    "solution\\photo.jpg": "[Binary file or unsupported type: jpg]",
+    "category": "Misc"
+}

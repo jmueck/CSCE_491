@@ -1,0 +1,5 @@
+{
+    "README.md": "# simple xor\n\nFound the following message:\nXUBdTFdScw5XCVRGTglJXEpMSFpOQE5AVVxJBRpLT10aYBpIVwlbCVZATl1WTBpaTkBOQFVcSQdH\n\n:)\n\n### Setup\nNone\n\n### Solution:\nThe key is the smiley face\nkey in hex: 3a29\nencrypted flag in hex: 5D405D4C5752730E570954464E09495C4A4C485A4E404E40555C49051A4B4F5D1A601A4857095B0956404E5D564C1A5A4E404E40555C490747 \nflag: gigem{I'm not superstitious, but I am a little stitious.}\n",
+    "xor.py": "sxor = ':)'\nsflag = 'this is the flag'\nflag = bytearray(sflag)\nxor = bytearray(sxor)\nencrypted = ''\nfor i in range(0,len(flag),2):\n    encrypted += str(hex(flag[i] ^ xor[0]))[2:]\n    encrypted += str(hex(flag[i+1] ^ xor[1]))[2:]\nprint encrypted\n",
+    "category": "Crypto"
+}

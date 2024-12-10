@@ -1,0 +1,5 @@
+{
+    "plain.pcap": "[Binary file or unsupported type: pcap]",
+    "README.md": "# Plain\n\n## Description\n\nSomeone logged into my computer and stole my flag. Can you get it back for me?\n\n## Solution\n\nOpen pcap in wireshark. Telnet time. \n\nFollow TCP stream. \n\n`cat flag.txt \nZ2lnZW17ZDBudF91czNfdDNsbmV0X2V2M3J9Cg==`\n\n`Flag: gigem{d0nt_us3_t3lnet_ev3r}`\n",
+    "category": "forensics"
+}

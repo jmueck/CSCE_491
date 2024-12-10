@@ -1,0 +1,5 @@
+{
+    "README.md": "# What's The Difference\n\n## Description\n\nI made a mistake while making a writeup for a challenge from MetaCTF 2021. Can you find it?\n\n## Solution\n\nOpen up the zip and notice that there is a `.git` folder which suggests that the zipped file used to be a git repository. \n\nOpen up README.md to find `Flag: MetaCTF{yOu_w!N_th1$_0n3}` at the end. Clearly, this is not the right flag.\n\nSince we know that this is a git repo, use `git log` to find out what changes were made, and we will see:\n\n```\ncommit 0b055455560bce16787d2e2a7b0ae36b3ddd2b35 (HEAD, master)\nAuthor: TacEx <TacEx@root.dev>\nDate:   Fri Apr 8 02:14:25 2022 -0500\n\n    Whoops wrong flag\n\ncommit e61bf8b90c60b29a241bd29205eb173ef79cd850\nAuthor: TacEx <TacEx@root.dev>\nDate:   Fri Apr 8 02:13:54 2022 -0500\n\n    Add writeup\n```\n\nUse `git checkout e61bf8b90c60b29a241bd29205eb173ef79cd850` to go to the previous version and open `README.md` to find the correct flag at the end.\n\nFlag: `gigem{b3_car3ful_b3for3_y0u_c0mmit}`\n",
+    "WhatsTheDifference.zip": "[Binary file or unsupported type: zip]",
+    "category": "forensics"
+}

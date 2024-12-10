@@ -1,0 +1,6 @@
+{
+    "easy_rsa.txt": "Hey, you're a hacker, right? I think I am too, look at what I made!\n\n-----------\n\n\n(2531257, 43)\nMy super secret message: 906851 991083 1780304 2380434 438490 356019 921472 822283 817856 556932 2102538 2501908 2211404 991083 1562919 38268\n\n-----------\n\nProblem is, I don't remember how to decrypt it... could you help me out? \n",
+    "README.md": "# Easy_RSA\n\nThis is a pretty simple challenge that just tests you know how RSA works.\n\n### Solution\n1.) Factorize n to find p and q, two primes (509/4973)\n2.) Calculate ```phi=(p-1)(q-1)``` (phi=252776)\n3.) Now find private key, d, where ```d=(e^-1) mod phi``` (d=58739)\n4.) Use d to decrypt message segments ```m=(c^d) mod n```\n\nThe ciphertext segments should turn out ascii. Convert to text to find the flag:\n\n```\ngigem{Savage_Six_Flying_Tigers}\n```\n\n",
+    "solution.txt": "gigem{Savage_Six_Flying_Tigers}\nascii piecemeal: 103 105103 101109 12383 97118 97103 10195 83105 12095 70108 121105 110103 9584 105103 101114 115125 \np=509\nq=4973\nn=2531257\ntotient=2525776\ne=43\nd=58739\nc= 906851 991083 1780304 2380434 438490 356019 921472 822283 817856 556932 2102538 2501908 2211404 991083 1562919 38268\n(when decrypted, should render ascii above)\n",
+    "category": "Crypto"
+}

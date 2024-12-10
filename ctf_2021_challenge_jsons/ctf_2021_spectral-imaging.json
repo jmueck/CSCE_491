@@ -1,0 +1,9 @@
+{
+    "audio.wav": "[Binary file or unsupported type: wav]",
+    "challenge.py": "from hacksport.operations import execute\nfrom hacksport.problem import Challenge, File\n\n\nclass Problem(Challenge):\n    def setup(self):\n        pass\n\n    def generate_flag(self, random):\n        return r\"gigem{4ud10-m4d3-v15u4L}\"\n",
+    "make-it-stop.gif": "[Binary file or unsupported type: gif]",
+    "problem.json": "{\n  \"name\": \"Spectral Imaging\",\n  \"category\": \"Sigint\",\n  \"description\": \"Some things are meant to be heard but not seen. This sounds like it's meant to be seen, not heard.\\n{{url_for('audio.wav')}}\",\n  \"score\": 100,\n  \"hints\": [],\n  \"walkthrough\": \"N/A\",\n  \"author\": \"Matthew Barry\",\n  \"organization\": \"TAMUctf\",\n  \"event\": \"TAMUctf\"\n}\n",
+    "README.md": "# Spectral Imaging\n\nSome things are meant to be heard but not seen.\nThis sounds like it's meant to be seen not heard.\n\n![make it stop](./make-it-stop.gif)\n\n* [Attachment](./audio.wav)\n\nYou might want to turn down your audio before playing this attachment.\n\n## Solution\n\nAll you need is a spectrum analyzer! [Try this one](https://academo.org/demos/spectrum-analyzer/).\n\n![](spectrum-analyzer.png)\n\nThe rest is up to you... :)",
+    "spectrum-analyzer.png": "[Binary file or unsupported type: png]",
+    "category": "sigint"
+}

